@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 import json
 import update
-file_name = "vuelos.json"
+import read
+import delete
+import create
 
+
+file_name = "vuelos.json"
 continuar = True
+
 while continuar:
 
     print("1. Información de los vuelos")
@@ -15,18 +20,19 @@ while continuar:
 
 
     if opcion == 1:
-        print("Informacion de los vuelos")
+        read.read_pantalla(file_name)
     
     elif opcion == 2:
-        print("Añadir un vuelo")
+        create.create(file_name)
 
     elif opcion == 3:
         update.actualizar_vuelo(file_name)
     elif opcion == 4:
-        print("Borrar un vuelo")
+        delete.eliminar_vuelo(file_name)
     
     elif opcion == 0:
         print("Salir")
         continuar = False
     else:
         print("Opcion no valida")
+
