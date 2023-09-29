@@ -1,5 +1,6 @@
 import json
-import Clases
+import vuelo
+import time
 
 file_name="vuelos.json"
 
@@ -33,13 +34,13 @@ def read_objects(file_name):
                 datos = json.loads(contenido)
 
                 for i in datos:
-                    vuelo = Clases.vuelo()
-                    vuelo.id_vuelo = i["dni"]
-                    vuelo.destino = i["nombre"]
-                    vuelo.hora_salida = i["apellidos"]
-                    vuelo.plazas_libres = i["fecha_nacimiento"]
+                    vuelos = vuelo.Vuelo()
+                    vuelos.hora_salida = i["hora_salida"]
+                    # vuelos.id_vuelo = i["id_vuelo"]
+                    vuelos.destino = i["destino"]
+                    vuelos.plazas_libres = i["plazas_libres"]
 
-                    objetos.append(vuelo)
+                    objetos.append(vuelos)
         
         return objetos
     except FileNotFoundError:
@@ -51,6 +52,5 @@ def read_pantalla(file_name):
     objetos = read_objects(file_name)
 
     for i in objetos:
-        print("DNI: " + i.dni  +"\nNombre: " + i.nombre + "\nApellidos: " + i.apellidos + "\nFecha nacimiento: " + i.fecha_nacimiento)
-
-
+        print("Fecha de salida: " + i.hora_salida  + "\nDestino: " + i.destino + "\nPlazas libres: " + i.plazas_libres)
+        # print("Fecha de salida: " + i.hora_salida  +"\Id vuelo: " + i.id_vuelo + "\nDestino: " + i.destino + "\nPlazas libres: " + i.plazas_libres)
