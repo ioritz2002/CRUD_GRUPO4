@@ -36,7 +36,7 @@ def read_objects(file_name):
                 for i in datos:
                     vuelos = vuelo.Vuelo()
                     vuelos.hora_salida = i["hora_salida"]
-                    # vuelos.id_vuelo = i["id_vuelo"]
+                    vuelos.id_vuelo = i["id_vuelo"]
                     vuelos.destino = i["destino"]
                     vuelos.plazas_libres = i["plazas_libres"]
 
@@ -52,5 +52,4 @@ def read_pantalla(file_name):
     objetos = read_objects(file_name)
 
     for i in objetos:
-        print("Fecha de salida: " + i.hora_salida  + "\nDestino: " + i.destino + "\nPlazas libres: " + i.plazas_libres)
-        # print("Fecha de salida: " + i.hora_salida  +"\Id vuelo: " + i.id_vuelo + "\nDestino: " + i.destino + "\nPlazas libres: " + i.plazas_libres)
+        print("Fecha de salida: " + str(i.hora_salida)  + "\nId vuelo: " + str(i.id_vuelo) + "\nDestino: " + str(i.destino) + "\nPlazas libres: " + str(i.plazas_libres))

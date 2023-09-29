@@ -15,10 +15,10 @@ while continuar:
 
 
     if opcion == 1:
-        print("Informacion de los vuelos")
+        read.read_pantalla(file_name)
     
     elif opcion == 2:
-        read.read_pantalla(file_name)
+        print("Añadir un vuelo")
 
     elif opcion == 3:
         print("Modificar un vuelo existente")
