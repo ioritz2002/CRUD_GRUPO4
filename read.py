@@ -26,7 +26,6 @@ def read_objects(file_name):
     objetos = []
 
     try:
-
         with open(file_name, "r") as archivo:
             contenido = archivo.read()
             
@@ -34,15 +33,18 @@ def read_objects(file_name):
                 datos = json.loads(contenido)
 
                 for i in datos:
-                    vuelos = vuelo.Vuelo()
-                    vuelos.hora_salida = i["hora_salida"]
-                    vuelos.id_vuelo = i["id_vuelo"]
-                    vuelos.destino = i["destino"]
-                    vuelos.plazas_libres = i["plazas_libres"]
+                    vuelo_obj = vuelo.Vuelo()
+                    vuelo_obj.hora_salida = i["hora_salida"]
+                    vuelo_obj.id_vuelo = i["id_vuelo"]
+                    vuelo_obj.destino = i["destino"]
+                    vuelo_obj.plazas_libres = i["plazas_libres"]
 
-                    objetos.append(vuelos)
+                    objetos.append(vuelo_obj)
+
+        objetos_sorted = sorted(objetos, key=lambda x: x.hora_salida, reverse=True)
         
-        return objetos
+        return objetos_sorted
+
     except FileNotFoundError:
         with open(file_name, "w") as archivo:
             archivo.write(json.dumps(objetos, indent=4))
@@ -50,6 +52,8 @@ def read_objects(file_name):
 
 def read_pantalla(file_name):
     objetos = read_objects(file_name)
-
+    
+    print("\nFecha de salida " + "\tId vuelo " + "\tDestino " + "\tPlazas libres ")
     for i in objetos:
-        print("Fecha de salida: " + str(i.hora_salida)  + "\nId vuelo: " + str(i.id_vuelo) + "\nDestino: " + str(i.destino) + "\nPlazas libres: " + str(i.plazas_libres))
+        print(str(i.hora_salida) + "\t" +  str(i.id_vuelo) + "\t\t" + str(i.destino) + "\t\t" + str(i.plazas_libres))
+    print("\n")
