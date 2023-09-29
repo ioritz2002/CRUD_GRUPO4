@@ -1,4 +1,5 @@
 import json
+
 class Vuelo:
     def __init__(self, id_vuelo, destino, hora_salida, plazas_libres):
         self.id_vuelo = id_vuelo
