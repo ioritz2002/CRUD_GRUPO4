@@ -2,7 +2,7 @@ import json
 import vuelo
 import read
 
-def eliminar_vuelo(id_vuelo, file_name):
+def eliminar_vuelo(file_name):
     try:
         objetos = read.read_objects(file_name)
         

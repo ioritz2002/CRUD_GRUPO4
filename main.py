@@ -28,7 +28,7 @@ while continuar:
         print("Modificar un vuelo existente")
 
     elif opcion == 4:
-        delete.eliminar_vuelo(id_vuelo,file_name)
+        delete.eliminar_vuelo(file_name)
     
     elif opcion == 0:
         print("Salir")
