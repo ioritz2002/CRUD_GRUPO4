@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import json
 import read
+import delete
 file_name = "vuelos.json"
+id_vuelo=1
 
 continuar = True
 while continuar:
@@ -24,10 +26,11 @@ while continuar:
         print("Modificar un vuelo existente")
 
     elif opcion == 4:
-        print("Borrar un vuelo")
+        delete.eliminar_vuelo(id_vuelo,file_name)
     
     elif opcion == 0:
         print("Salir")
         continuar = False
     else:
         print("Opcion no valida")
+
