@@ -50,6 +50,8 @@ def read_objects(file_name):
 
 def read_pantalla(file_name):
     objetos = read_objects(file_name)
-
+    
+    print("\nFecha de salida " + "\tId vuelo " + "\tDestino " + "\tPlazas libres ")
     for i in objetos:
-        print("Fecha de salida: " + str(i.hora_salida)  + "\nId vuelo: " + str(i.id_vuelo) + "\nDestino: " + str(i.destino) + "\nPlazas libres: " + str(i.plazas_libres))
+        print(str(i.hora_salida) + "\t" +  str(i.id_vuelo) + "\t\t" + str(i.destino) + "\t\t" + str(i.plazas_libres))
+    print("\n")
