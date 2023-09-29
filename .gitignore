@@ -2,3 +2,4 @@ vuelos.json
 __pycache__/create.cpython-310.pyc
 __pycache__/vuelo.cpython-310.pyc
 __pycache__/delete.cpython-310.pyc
+__pycache__/read.cpython-310.pyc
