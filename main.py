@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import json
-file_name = "vuelos.json"
+import create
 
+file_name = "vuelos.json"
 continuar = True
+
 while continuar:
 
     print("1. Información de los vuelos")
@@ -17,7 +19,7 @@ while continuar:
         print("Informacion de los vuelos")
     
     elif opcion == 2:
-        print("Añadir un vuelo")
+        create.create(file_name)
 
     elif opcion == 3:
         print("Modificar un vuelo existente")
