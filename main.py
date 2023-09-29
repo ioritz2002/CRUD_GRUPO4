@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import update
 import read
 import delete
 import create
@@ -25,8 +26,7 @@ while continuar:
         create.create(file_name)
 
     elif opcion == 3:
-        print("Modificar un vuelo existente")
-
+        update.actualizar_vuelo(file_name)
     elif opcion == 4:
         delete.eliminar_vuelo(file_name)
     
