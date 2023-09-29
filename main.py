@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import update
 file_name = "vuelos.json"
 
 continuar = True
@@ -20,8 +21,7 @@ while continuar:
         print("Añadir un vuelo")
 
     elif opcion == 3:
-        print("Modificar un vuelo existente")
-
+        update.actualizar_vuelo(file_name)
     elif opcion == 4:
         print("Borrar un vuelo")
     
